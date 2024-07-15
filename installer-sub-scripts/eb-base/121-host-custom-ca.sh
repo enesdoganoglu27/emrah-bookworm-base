@@ -43,5 +43,5 @@ if [[ ! -f "/root/$TAG-certs/$TAG-CA.pem" ]]; then
 
     openssl req -nodes -new -x509 -days 10950 \
         -keyout $TAG-CA.key -out $TAG-CA.pem \
-        -subj "/O=$TAG/OU=CA/CN=$TAG-trixie $DATE-$RANDOM"
+        -subj "/O=$TAG/OU=CA/CN=$TAG-bullseye $DATE-$RANDOM"
 fi
