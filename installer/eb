@@ -164,7 +164,7 @@ export TMP=$APP_TMP_DIR
 export INSTALLER=$APP_TMP_DIR/installer-sub-scripts/$APP_TEMPLATE
 export MACHINES=$APP_TMP_DIR/machines
 export MACHINE_HOST=$MACHINES/$TAG-host
-export MACHINE_TRIXIE=$MACHINES/$TAG-trixie
+export MACHINE_TRIXIE=$MACHINES/$TAG-bullseye
 export MACHINE_COMMON=$MACHINES/common
 
 cd $INSTALLER
