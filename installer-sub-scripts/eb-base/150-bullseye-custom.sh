@@ -7,7 +7,7 @@ source $INSTALLER/000-source
 # ------------------------------------------------------------------------------
 # ENVIRONMENT
 # ------------------------------------------------------------------------------
-MACH="$TAG-bullseye"
+MACH="$TAG-trixie"
 cd $MACHINES/$MACH
 
 ROOTFS="/var/lib/lxc/$MACH/rootfs"
@@ -15,8 +15,8 @@ ROOTFS="/var/lib/lxc/$MACH/rootfs"
 # ------------------------------------------------------------------------------
 # INIT
 # ------------------------------------------------------------------------------
-[[ "$BULLSEYE_SKIPPED" = true ]] && exit
-[[ "$DONT_RUN_BULLSEYE_CUSTOM" = true ]] && exit
+[[ "$TRIXIE_SKIPPED" = true ]] && exit
+[[ "$DONT_RUN_TRIXIE_CUSTOM" = true ]] && exit
 
 echo
 echo "---------------------- $MACH CUSTOM -----------------------"
