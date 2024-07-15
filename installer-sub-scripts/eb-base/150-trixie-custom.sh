@@ -63,10 +63,10 @@ EOS
 # ------------------------------------------------------------------------------
 # shell
 lxc-attach -n $MACH -- chsh -s /bin/zsh root
-cp root/.bashrc $ROOTFS/root/
-cp root/.vimrc $ROOTFS/root/
-cp root/.zshrc $ROOTFS/root/
-cp root/.tmux.conf $ROOTFS/root/
+cp ../../common/home/user/.bashrc $ROOTFS/root/
+cp ../../common/home/user/.vimrc $ROOTFS/root/
+cp ../../common/home/user/.zshrc $ROOTFS/root/
+cp ../../common/home/user/.tmux.conf $ROOTFS/root/
 
 # ------------------------------------------------------------------------------
 # CONTAINER SERVICES
