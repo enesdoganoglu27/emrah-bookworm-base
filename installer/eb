@@ -43,7 +43,7 @@ export LOGGER="https://checkmyport.emrah.com"
 
 [[ -z "$BRIDGE" ]] && export BRIDGE="$TAG"
 [[ -z "$SHARED" ]] && export SHARED="/usr/local/$TAG"
-[[ -z "$RELEASE" ]] && export RELEASE="bullseye"
+[[ -z "$RELEASE" ]] && export RELEASE="trixie"
 [[ -z "$FREE_SPACE_NEEDED" ]] && export FREE_SPACE_NEEDED="1000000"
 
 # ------------------------------------------------------------------------------
@@ -164,7 +164,7 @@ export TMP=$APP_TMP_DIR
 export INSTALLER=$APP_TMP_DIR/installer-sub-scripts/$APP_TEMPLATE
 export MACHINES=$APP_TMP_DIR/machines
 export MACHINE_HOST=$MACHINES/$TAG-host
-export MACHINE_BULLSEYE=$MACHINES/$TAG-bullseye
+export MACHINE_TRIXIE=$MACHINES/$TAG-trixie
 export MACHINE_COMMON=$MACHINES/common
 
 cd $INSTALLER
