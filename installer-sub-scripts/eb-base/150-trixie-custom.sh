@@ -63,7 +63,7 @@ EOS
 # ------------------------------------------------------------------------------
 # shell
 cp /tmp/eb/machines/common/home/user/.bashrc $ROOTFS/root/
-cp /tmp/eb/machines/common/home/user/.vimr $ROOTFS/root/
+cp /tmp/eb/machines/common/home/user/.vimrc $ROOTFS/root/
 cp /tmp/eb/machines/common/home/user/.zshrc $ROOTFS/root/
 cp /tmp/eb/machines/common/home/user/.tmux.conf $ROOTFS/root/
 lxc-attach -n $MACH -- chsh -s /bin/zsh root
