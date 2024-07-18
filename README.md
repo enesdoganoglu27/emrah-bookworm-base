@@ -27,6 +27,10 @@ bash eb eb-base
 
 ---
 
+### Debian Trixie Download Link
+
+- [Trixie Download](https://cdimage.debian.org/cdimage/daily-builds/daily/arch-latest/amd64/iso-cd/) 
+
 #### Templates
 
 See the
