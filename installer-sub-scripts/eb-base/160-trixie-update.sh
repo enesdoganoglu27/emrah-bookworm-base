@@ -7,7 +7,7 @@ source $INSTALLER/000-source
 # ------------------------------------------------------------------------------
 # ENVIRONMENT
 # ------------------------------------------------------------------------------
-MACH="$TAG-trixie"
+MACH="$TAG-bookworm"
 cd $MACHINES/$MACH
 
 ROOTFS="/var/lib/lxc/$MACH/rootfs"
@@ -15,8 +15,8 @@ ROOTFS="/var/lib/lxc/$MACH/rootfs"
 # ------------------------------------------------------------------------------
 # INIT
 # ------------------------------------------------------------------------------
-[[ "$TRIXIE_SKIPPED" != true ]] && exit
-[[ "$DONT_RUN_TRIXIE_UPDATE" = true ]] && exit
+[[ "$BOOKWORM_SKIPPED" != true ]] && exit
+[[ "$DONT_RUN_BOOKWORM_UPDATE" = true ]] && exit
 
 echo
 echo "---------------------- $MACH UPDATE -----------------------"
