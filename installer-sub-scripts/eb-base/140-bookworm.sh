@@ -98,12 +98,12 @@ sleep 1
 lxc-attach -n $MACH -- bash <<EOS
 set -e
 export DEBIAN_FRONTEND=noninteractive
+sed -i 's|https://|http://|g' /etc/apt/sources.list
 apt-get update
 apt-get install -y --no-install-recommends \
     ca-certificates openssl iputils-ping
-#dpkg -i \$(ls -1t /var/cache/apt/archives/openssl_* | head -1)
-#dpkg -i \$(ls -1t /var/cache/apt/archives/ca-certificates_* | head -1)
-#dpkg -i \$(ls -1t /var/cache/apt/archives/iputils-ping_* | head -1)
+sed -i 's|http://|https://|g' /etc/apt/sources.list
+apt-get $APT_PROXY -y install nano
 EOS
 
 # wait for the network to be up
