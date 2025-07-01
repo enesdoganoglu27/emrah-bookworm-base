@@ -70,13 +70,13 @@ if [[ "root" != "$(whoami)" ]]; then
 fi
 
 # If the OS release is unsupported, cancel the installation.
-if [[ "$DONT_CHECK_OS_RELEASE" != true ]] && \
-   [[ -z "$(grep "$RELEASE" /etc/os-release)" ]]; then
-    echo
-    echo "ERROR: unsupported OS release"
-    echo "Please, use '$RELEASE' on host machine"
-    exit 1
-fi
+#if [[ "$DONT_CHECK_OS_RELEASE" != true ]] && \
+#   [[ -z "$(grep "$RELEASE" /etc/os-release)" ]]; then
+#    echo
+#    echo "ERROR: unsupported OS release"
+#    echo "Please, use '$RELEASE' on host machine"
+#    exit 1
+#fi
 
 # If there is not enough disk free space, cancel the installation.
 if [[ "$DONT_CHECK_FREE_SPACE" != true ]] && \
