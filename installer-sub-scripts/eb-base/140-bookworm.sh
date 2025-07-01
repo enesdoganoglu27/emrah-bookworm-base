@@ -91,16 +91,19 @@ sleep 1
 # PACKAGES
 # ------------------------------------------------------------------------------
 # ca-certificates for https repo
-apt-get $APT_PROXY \
-    -o dir::cache::archives="/usr/local/$TAG/cache/bookworm-apt-archives/" \
-    -dy reinstall iputils-ping ca-certificates openssl
+#apt-get $APT_PROXY \
+#    -o dir::cache::archives="/usr/local/$TAG/cache/bookworm-apt-archives/" \
+#    -dy reinstall iputils-ping ca-certificates openssl
 
 lxc-attach -n $MACH -- bash <<EOS
 set -e
 export DEBIAN_FRONTEND=noninteractive
-dpkg -i \$(ls -1t /var/cache/apt/archives/openssl_* | head -1)
-dpkg -i \$(ls -1t /var/cache/apt/archives/ca-certificates_* | head -1)
-dpkg -i \$(ls -1t /var/cache/apt/archives/iputils-ping_* | head -1)
+apt-get update
+apt-get install -y --no-install-recommends \
+    ca-certificates openssl iputils-ping
+#dpkg -i \$(ls -1t /var/cache/apt/archives/openssl_* | head -1)
+#dpkg -i \$(ls -1t /var/cache/apt/archives/ca-certificates_* | head -1)
+#dpkg -i \$(ls -1t /var/cache/apt/archives/iputils-ping_* | head -1)
 EOS
 
 # wait for the network to be up
