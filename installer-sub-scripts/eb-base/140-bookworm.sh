@@ -23,16 +23,16 @@ echo "-------------------------- $MACH --------------------------"
 # ------------------------------------------------------------------------------
 # REINSTALL_IF_EXISTS
 # ------------------------------------------------------------------------------
-EXISTS=$(lxc-info -n $MACH | egrep '^State' || true)
-if [[ -n "$EXISTS" ]] && [[ "$REINSTALL_BOOKWORM_IF_EXISTS" != true ]]; then
-    echo BOOKWORM_SKIPPED=true >> $INSTALLER/000-source
+#EXISTS=$(lxc-info -n $MACH | egrep '^State' || true)
+#if [[ -n "$EXISTS" ]] && [[ "$REINSTALL_BOOKWORM_IF_EXISTS" != true ]]; then
+#    echo BOOKWORM_SKIPPED=true >> $INSTALLER/000-source
 
-    echo "Already installed. Skipped..."
-    echo
-    echo "Please set REINSTALL_BOOKWORM_IF_EXISTS in $APP_CONFIG"
-    echo "if you want to reinstall this container"
-    exit
-fi
+#    echo "Already installed. Skipped..."
+#    echo
+#    echo "Please set REINSTALL_BOOKWORM_IF_EXISTS in $APP_CONFIG"
+#    echo "if you want to reinstall this container"
+#    exit
+#fi
 
 # ------------------------------------------------------------------------------
 # CONTAINER SETUP
@@ -47,7 +47,7 @@ sleep 1
 set -e
 
 # clear LXC templates cache to get the newest one
-rm -rf /var/cache/lxc/download/debian/bookworm/$ARCH/default
+rm -rf /var/cache/lxc/download/debian/bullseye/$ARCH/default
 
 # create the new one
 lxc-create -n $MACH -t download -P /var/lib/lxc/ -- \
